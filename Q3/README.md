@@ -8,7 +8,7 @@ Following is the detailed design.
 The provided code demonstrate a Geo Distributed LRU (Least Recently Used) cache with time expiration implemented using Node.js and Express.js. Let's break down how the code works:
 
 ### server-sf.js and server-ny.js:
-These files create two separate Express.js servers for San Francisco (server-sf.js) and New York (server-ny.js). Each server handles GET and POST requests for key-value pairs. I have populated dummy data in key,value pair (using a Map). I could have used any Database also instead.
+These files create two separate Express.js servers for San Francisco (server-sf.js) and New York (server-ny.js). Each server handles GET and POST requests for key-value pairs. I have populated dummy data in key,value pair (using a Map).
 
 GET Endpoint: When a GET request is made to /:key, the server checks if the requested key exists in its local cache (data Map). If the key is found, it responds with the corresponding value. Otherwise, it responds with "Key not found in SF" or "Key not found in NY", depending on the server.
 
