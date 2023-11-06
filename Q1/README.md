@@ -1,6 +1,6 @@
 # Test Q1
 
-Program is written in Java and hecks if two lines, represented by their coordinates, overlap or not. It achieves this by defining a method doLinesOverlap that takes two arrays of integers, each containing two coordinates for a line. Inside this method, it checks if the lines overlap by comparing the x-coordinates. The main method of the program prompts the user to enter coordinates for two lines, calls the doLinesOverlap method, and prints true if the lines overlap and false otherwise.
+Program is written in Java and checks if two lines, represented by their coordinates, overlap or not. It achieves this by defining a method doLinesOverlap that takes two arrays of integers, each containing two coordinates for a line. Inside this method, it checks if the lines overlap by comparing the x-coordinates. The main method of the program prompts the user to enter coordinates for two lines, calls the doLinesOverlap method, and prints true if the lines overlap and false otherwise.
 
 To use the provided Java program via the console, follow these steps:
 
@@ -16,7 +16,7 @@ Run the Program:
 After compiling successfully, run the program with the following command: java Test_Q1
 - This will execute the program and the console will display: Enter coordinates of first line (Separated by a space):
 - Enter the coordinates for the first line, separated by a space (for example, 1 5) and press Enter.
-- The console will then display: Enter coordinates of second line (Separated by a space):
+- The console will then display: Enter coordinates of second line:
 - Enter the coordinates for the second line, separated by a space (for example, 3 7) and press Enter.
 
 View the Output:
