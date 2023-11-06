@@ -50,12 +50,12 @@ app.get("/:key", async (req, res) => {
   );
 });
 
-app.post("/put/:key/:value", async (req, res) => {
+app.post("/:key/:value", async (req, res) => {
   const key = req.params.key;
   const value = req.params.value;
   await Promise.all([
-    axios.post(`${nyCacheServer}/put/${key}/${value}`),
-    axios.post(`${sfCacheServer}/put/${key}/${value}`),
+    axios.post(`${nyCacheServer}/${key}/${value}`),
+    axios.post(`${sfCacheServer}/${key}/${value}`),
   ]);
 
   // Update the LRU cache with the stored value
