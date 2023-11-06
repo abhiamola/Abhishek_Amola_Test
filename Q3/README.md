@@ -100,8 +100,8 @@ This will start the cache client on port 8000.
 Now, your SF and NY servers, along with the cache client, should be running. You can make requests to the cache client by accessing endpoints like http://localhost:8000/:key for GET requests a replacing :key with the desired key. Example - http://localhost:8000/1
 
 ![image](https://github.com/abhiamola/Abhishek_Amola_Test/assets/15613143/21f3e6e1-71b1-4852-839d-094926531b6d)
-It shows data is retrived from NY and SF server. Id '1' has value '2'
+<br/>It shows data is retrived from NY and SF server. Id '1' has value '2'
 ![image](https://github.com/abhiamola/Abhishek_Amola_Test/assets/15613143/386af245-9678-42af-84e5-bf3e34c015f8)
-Now value is returning from cache. It will stay in cache for only 5 seconds
+<br/>Now value is returning from cache. It will stay in cache for only 5 seconds
 
 
