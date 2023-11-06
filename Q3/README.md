@@ -76,19 +76,22 @@ However, it's important to note that this implementation has limitations, especi
 Ensure you have Node.js installed on your system. You can download and install it from the official Node.js website.
 
 #### Install Dependencies:
-In the directory where your code files are located, open a terminal or command prompt and run the following command for each of the server files and the cache-client file. This will install the necessary dependencies (Express.js, Axios, and lru-cache).
-**npm install **
+In the directory where your code files are located, open a terminal or command prompt and run the following command for each of the server files and the cache-client file. This will install the necessary dependencies (Express.js, Axios, and lru-cache).<br />
+<b>npm install</b>
 
 #### Run Servers:
-Open two separate terminal windows or tabs. In one window, navigate to the directory where server-sf.js is located and run the SF server:
-node server-sf.js
-In the other window, navigate to the directory where server-ny.js is located and run the NY server:
-node server-ny.js
+Open two separate terminal windows or tabs. In one window, navigate to the directory where server-sf.js is located and run the SF server:<br />
+<b>node server-sf.js</b>
+<br />
+In the other window, navigate to the directory where server-ny.js is located and run the NY server:<br />
+<b>node server-ny.js</b>
+<br />
 This will start the SF server on port 3001 and the NY server on port 3000.
 
 #### Run Cache Client:
-Open another terminal window or tab. Navigate to the directory where cache-client.js is located and run the cache client:
-node cache-client.js
+Open another terminal window or tab. Navigate to the directory where cache-client.js is located and run the cache client:<br />
+<b>node cache-client.js</b>
+<br />
 This will start the cache client on port 8000.
 
 Now, your SF and NY servers, along with the cache client, should be running. You can make requests to the cache client by accessing endpoints like http://localhost:8000/:key for GET requests a replacing :key with the desired key. Example - http://localhost:8000/1
