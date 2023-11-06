@@ -35,39 +35,42 @@ Please note that the code assumes that the SF and NY servers are running locally
 
 ## The provided architecture attempts to satisfy the specified conditions as follows:
 
-### Simplicity:
+#### Simplicity:
 - The codebase is relatively simple, utilizing basic Node.js and Express.js for server implementation.
 - The cache client handles requests and responses, making integration straightforward.
 
-### Resilience to Network Failures or Crashes:
+#### Resilience to Network Failures or Crashes:
 - The architecture uses separate servers for San Francisco and New York, making them independent of each other.
 - The cache client can handle failures by falling back to the other server if one server is unresponsive.
 
-### Near Real-Time Data Replication:
+#### Near Real-Time Data Replication:
 - The cache client fetches data from both SF and NY servers in real-time when a cache miss occurs, ensuring near real-time data replication.
 - Writes are done immediately to both servers in parallel, ensuring real-time updates across geolocations.
 
-### Data Consistency Across Regions:
+#### Data Consistency Across Regions:
 - Data consistency is maintained by updating both SF and NY servers in real-time for every write operation.
 - Reads are served from the cache, ensuring consistency and reducing the load on the servers.
 
-### Locality of Reference:
+#### Locality of Reference:
 - The cache client uses a local cache (sfCache and nyCache) for each region, serving data from the closest available cache.
 - If the data is not found in the local cache, it fetches the data from the closest server, minimizing latency.
 
-### Flexible Schema:
+#### Flexible Schema:
 - The implementation does not enforce a strict schema for the stored data, allowing flexibility in the key-value pairs that can be stored in the cache.
 
-### Cache Expiry:
+#### Cache Expiry:
 - The LRU cache implemented using the lru-cache package allows setting a time-to-live (TTL) for cache entries (5 seconds in this case). Entries in the cache will automatically expire after the specified TTL, ensuring cache freshness and preventing stale data.
 
-However, it's important to note that this implementation has limitations, especially in a production environment. For example, in the event of server failures, there is no mechanism for automatic failover or data recovery. Additionally, in a real-world scenario, much more robust solutions can be used such as distributed databases, load balancers, etc. Also, I have already talked about Redis.
+However, it's important to note that this implementation has limitations, especially in a production environment. For example, in the event of server failures, there is no mechanism for automatic failover or data recovery. Additionally, in a real-world scenario, much more robust solutions can be used such as distributed databases, load balancers, etc.
 
-### Improvement that I could have made
+### Improvements that I could have made
 
 - Use a database instead of dummy data
-- Creating separate LRU cache files for NY and SF servers and the created an intermediary mecahnism file for data consistency. Also can play around with diffent ttl for NY and SF cache, different size of cache, etc.
+- Creating separate LRU cache files for NY and SF servers and the created an intermediary mecahnism file for data consistency. Also can play around with diffent ttl for NY and SF cache, different size of cache, etc. Techniques like master-slave replication or multi-master replication can be used to ensure data consistency across regions.
+- Using distributed caching solutions like Redis or Memcached (as discussed erlier), which offer built-in support for data replication, high availability, and automatic failover.
 - Not to use lru-cache library and create LRU cache from scratch using Doubly linked list and Hash Map
+- Store configuration parameters like server addresses, cache size, and TTL in environment variables or configuration files.
+- Write unit tests for individual components and integration tests for the entire system
 
 
 ### To run the provided code, you'll need to follow these steps:
