@@ -1,6 +1,6 @@
 # Test Q3
 
-To come up with a simple yet scalable architecture many assumptions were made and have used node libraries.
+To come up with a simple yet scalable architecture I have made some assumptions and have used some node libraries.
 After researching current technologies available, there are multiple ways in which this problem can be solved. One way is to use Redis which can be quite convenient as we can leverage Redis clusters (across geolocations). It also provide LRU cahche option, Redis Sentinel (which can help in network failures), and many other functionalities. But I felt it beats the purpose of this exercise where Redis itself provides a library which solve much of our problem. So, I chose not use Redis. 
 
 Following is the detailed design.
