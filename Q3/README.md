@@ -66,10 +66,36 @@ However, it's important to note that this implementation has limitations, especi
 ### Improvement that I could have made
 
 - Use a database instead of dummy data
-- Creating separate LRU cache for NY and SF servers and the created an intermediary mecahnism for data consistency
+- Creating separate LRU cache files for NY and SF servers and the created an intermediary mecahnism file for data consistency. Also can play around with diffent ttl for NY and SF cache, different size of cache, etc.
 - Not to use lru-cache library and create LRU cache from scratch using Doubly linked list and Hash Map
 
 
+### To run the provided code, you'll need to follow these steps:
 
+#### Install Node.js:
+Ensure you have Node.js installed on your system. You can download and install it from the official Node.js website.
+
+#### Install Dependencies:
+In the directory where your code files are located, open a terminal or command prompt and run the following command for each of the server files and the cache-client file. This will install the necessary dependencies (Express.js, Axios, and lru-cache).
+##### npm install 
+
+#### Run Servers:
+Open two separate terminal windows or tabs. In one window, navigate to the directory where server-sf.js is located and run the SF server:
+##### node server-sf.js
+In the other window, navigate to the directory where server-ny.js is located and run the NY server:
+##### node server-ny.js
+This will start the SF server on port 3001 and the NY server on port 3000.
+
+#### Run Cache Client:
+Open another terminal window or tab. Navigate to the directory where cache-client.js is located and run the cache client:
+##### node cache-client.js
+This will start the cache client on port 8000.
+
+Now, your SF and NY servers, along with the cache client, should be running. You can make requests to the cache client by accessing endpoints like http://localhost:8000/:key for GET requests a replacing :key with the desired key. Example - http://localhost:8000/1
+
+![image](https://github.com/abhiamola/Abhishek_Amola_Test/assets/15613143/21f3e6e1-71b1-4852-839d-094926531b6d)
+
+![image](https://github.com/abhiamola/Abhishek_Amola_Test/assets/15613143/386af245-9678-42af-84e5-bf3e34c015f8)
+It will stay in cache for only 5 seconds
 
 
